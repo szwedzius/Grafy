@@ -1,0 +1,36 @@
+//Graf skierowany macierz sąsiedztwa
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int> tab[7];
+
+int main()
+{
+    int x;
+    cin>>x;
+    int tab[x+1][x+1] = {};
+
+    int y;
+    cin>>y;
+
+    for(int i=0;i<y;i++)
+    {
+        int a;
+        int b;
+        cin>>a>>b;
+        tab[a][b] = 1;
+    }
+
+    for(int i=0;i<x+1;i++)
+    {
+        for(int j=0;j<x+1;j++)
+        {
+            cout<<tab[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+
+    return 0;
+}

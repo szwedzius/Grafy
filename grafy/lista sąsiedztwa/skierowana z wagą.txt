@@ -1,0 +1,40 @@
+//Graf skierowany z lista sasiedztwa
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int> tab[7];
+
+int main()
+{
+    int x;
+    cin>>x;
+    vector<vector<pair<int, int> > > v;
+
+    v.resize(x+1);
+
+    int y;
+    cin>>y;
+
+    for(int i=0;i<y;i++)
+    {
+        int a;
+        int b;
+        int c;
+        cin>>a>>b>>c;
+        v[a].push_back(make_pair(b,c));
+    }
+
+    for(int i=1;i<x+1;i++)
+    {
+        cout<<i<<": ";
+        for(int j=0;j<v[i].size();j++)
+        {
+            cout<<v[i].at(j).first<<" ("<<v[i].at(j).second<<") ";
+        }
+        cout<<endl;
+    }
+
+
+    return 0;
+}
